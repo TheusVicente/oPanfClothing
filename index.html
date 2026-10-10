@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANF CLOTHING | Loja Oficial</title>
+    <meta name="description" content="Camisetas oversized PANF Clothing. Faça seu pedido e pague online.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+    <div class="scroll-progress" id="progress"></div>
+
+    <div class="announcement" id="announcement">
+        <span class="on">5% OFF comprando 2 ou mais</span>
+        <span>Frete grátis</span>
+        <span>Desconto extra no Pix</span>
+    </div>
+
+    <header class="navbar" id="navbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+        <a href="#top" class="logo">PANF<span>.</span></a>
+        <nav class="nav-links" aria-label="Principal">
+            <a href="#top" class="nav-link">Início</a>
+            <div class="has-sub">
+                <a href="#produtos" class="nav-link">Produtos</a>
+                <div class="submenu">
+                    <a href="#produtos">Ver todos os produtos</a>
+                    <a href="#produtos">Camisetas Oversized</a>
+                </div>
+            </div>
+            <a href="https://www.panf.com.br/contato/" target="_blank" rel="noopener" class="nav-link">Contato</a>
+            <a href="https://www.panf.com.br/quem-somos/" target="_blank" rel="noopener" class="nav-link">Quem Somos</a>
+            <a href="https://www.panf.com.br/trocas-e-devolucoes/" target="_blank" rel="noopener" class="nav-link">Trocas e Devoluções</a>
+        </nav>
+        <div class="nav-actions">
+            <a href="https://www.panf.com.br/account/login/" target="_blank" rel="noopener" class="nav-link login">Entrar</a>
+            <button id="cart-toggle-btn" class="cart-btn">Carrinho <span id="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <div class="overlay" id="menu-overlay"></div>
+    <aside class="mobile-panel" id="mobile-panel">
+        <a href="#top">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="https://www.panf.com.br/contato/" target="_blank" rel="noopener">Contato</a>
+        <a href="https://www.panf.com.br/quem-somos/" target="_blank" rel="noopener">Quem Somos</a>
+        <a href="https://www.panf.com.br/trocas-e-devolucoes/" target="_blank" rel="noopener">Trocas e Devoluções</a>
+        <a href="https://www.panf.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>
+    </aside>
+
+    <section class="hero" id="hero">
+        <div class="slides" id="slides"></div>
+        <div class="hero-content">
+            <span class="hero-tag">DROP #04 - URBAN ESSENTIALS</span>
+            <h1>PANF CLOTHING</h1>
+            <p>Seja bem-vindo(a). Vista o que você acredita.</p>
+            <a href="#produtos" class="btn">Ver produtos</a>
+        </div>
+    </section>
+
+    <main class="container" id="produtos">
+        <div class="section-header reveal">
+            <h2>Destaques</h2>
+            <span class="section-note">Camisetas oversized</span>
+        </div>
+        <div class="products-grid" id="products-grid"></div>
+    </main>
+
+    <section class="newsletter reveal">
+        <h2>Novidades</h2>
+        <p>Cadastre-se e receba nossas ofertas.</p>
+        <form id="news-form" novalidate>
+            <input type="email" id="news-email" placeholder="Seu melhor e-mail" aria-label="E-mail">
+            <button type="submit" class="btn">Cadastrar</button>
+        </form>
+        <p class="news-msg" id="news-msg"></p>
+    </section>
+
+    <div class="overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Carrinho de compras">
+        <div class="cart-header">
+            <h3>Carrinho de compras</h3>
+            <button class="close-btn" id="close-cart-btn" aria-label="Fechar carrinho">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cep">
+                <label for="cep">Entrega para o CEP</label>
+                <div class="cep-row">
+                    <input id="cep" inputmode="numeric" placeholder="00000-000" maxlength="9">
+                    <button id="cep-btn" class="btn-sm">Calcular</button>
+                </div>
+                <p class="cep-msg" id="cep-msg"></p>
+            </div>
+            <div class="line"><span>Subtotal (sem frete)</span><span id="cart-subtotal">R$ 0,00</span></div>
+            <div class="line disc" id="disc-line" hidden><span>Desconto (2 ou mais produtos)</span><span id="cart-discount">- R$ 0,00</span></div>
+            <div class="line total"><span>Total</span><span id="cart-total">R$ 0,00</span></div>
+            <p class="pix-note" id="pix-note">Ou R$ 0,00 no Pix</p>
+            <button class="btn full" id="checkout-btn">Finalizar compra</button>
+            <button class="btn-link" id="more-btn">Ver mais produtos</button>
+        </div>
+    </aside>
+
+    <div class="added" id="added" role="status">
+        <strong>Adicionado ao carrinho!</strong>
+        <span id="added-total">Total (0 produtos): R$ 0,00</span>
+        <button class="btn-sm" id="added-view">Ver carrinho</button>
+    </div>
+
+    <a class="whatsapp" href="https://wa.me/5511988389795" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><i></i>WhatsApp</a>
+
+    <div class="cookies" id="cookies">
+        <p>Ao navegar por este site <strong>você aceita o uso de cookies</strong> para agilizar a sua experiência de compra.</p>
+        <button class="btn-sm" id="cookies-ok">Entendi</button>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>PANF.</h2>
+                <p>Estilo urbano atemporal. Projetado no Brasil.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#top">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="https://www.panf.com.br/contato/" target="_blank" rel="noopener">Contato</a></li>
+                    <li><a href="https://www.panf.com.br/quem-somos/" target="_blank" rel="noopener">Quem Somos</a></li>
+                    <li><a href="https://www.panf.com.br/trocas-e-devolucoes/" target="_blank" rel="noopener">Trocas e Devoluções</a></li>
+                    <li><a href="https://www.panf.com.br/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="https://wa.me/5511988389795" target="_blank" rel="noopener">WhatsApp (11) 98838-9795</a></li>
+                    <li><a href="tel:11988389795">(11) 98838-9795</a></li>
+                    <li><a href="https://instagram.com/panf.clothing" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/Panf%20Clothing" target="_blank" rel="noopener">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pay">
+            <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Elo</span><span>Hipercard</span><span>Pix</span><span>Boleto</span>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 PANF Clothing. Todos os direitos reservados.</p></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
